@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --main-color: #1663A9;
+  --sec-color: #68ACE9;
 }
 * {
   margin: 0;
@@ -30,7 +33,7 @@ body{
 h1 {
   font-size: 28px;
   /* color: #e52a6f; */
-  color: #1663A9;
+  color: var(--main-color);
   margin: 10px 0;
   border-bottom: 5px solid #565656;
   display: inline-block;
@@ -42,8 +45,10 @@ h3 {
 a {
   text-decoration: none;
 }
+li{
+  list-style: none;
+}
 .background {
-  /* background-image: url(../images/brushing.webp); */
   position: fixed;
   box-sizing: border-box;
   width: 100%;
@@ -62,7 +67,7 @@ a {
 /* header section starts */
 header {
   /* background-color: #00d1ff; */
-  background-color: #1663A9;
+  background-color: var(--main-color);
   width: 100%;
 }
 
@@ -101,7 +106,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 99;
-  border-bottom: 1px solid #00d1ff;
+  border-bottom: 1px solid var(--sec-color);
 }
 .navigation {
   overflow-x: hidden;
@@ -122,13 +127,11 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
   gap: 10px 35px;
 }
 nav ul li a {
   text-decoration: none;
   display: inline-block;
-  /* color: #00d1ff; */
   color: #000;
   font-size: 18px;
   padding: 2px 10px;
@@ -143,6 +146,7 @@ nav ul li a::after {
   left: 50%;
   height: 3px;
   background-color: #00d1ff;
+  background-color: var(--sec-color);
   transition:all 0.3s linear;
 }
 nav ul li a:hover::after, 
@@ -235,24 +239,21 @@ nav ul li a.active::after{
 .table .card {
   flex: 1 1 0;
   background: #fff;
-  padding: 20px;
+  padding: 50px 20px 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 2px 2px #68ACE9;
+  box-shadow: 2px 2px var(--sec-color);
 }
 .table .card:first-child {
   /* background: #00d1ff; */
-  background: #68ACE9;
+  background: var(--sec-color);
   justify-content: flex-start;
-  box-shadow: 2px 2px rgb(0, 0, 0);
+  box-shadow: 2px 2px #696464;
 }
 .table .card h3 {
   font-size: 26px;
-}
-.table .card p {
-  color: #00303f;
 }
 .table .card:first-child .card-header {
   font-size: 35px;
@@ -296,7 +297,6 @@ nav ul li a.active::after{
 }
 .about-us-content {
   width: 55%;
-  /* color: #7a7a2d; */
   color: #000;
 }
 .about-us-content h3 {
@@ -320,7 +320,7 @@ nav ul li a.active::after{
   color: #fff;
   text-transform: capitalize;
   /* background-color: #a47fae; */
-  background-color: #68ACE9;
+  background-color: var(--sec-color);
   padding: 10px 20px;
   margin-top: 10px;
   width: 150px;
@@ -397,7 +397,6 @@ nav ul li a.active::after{
 /* services section starts */
 
 .services-background {
-  /* background-color: #e6fff6; */
   background-color: #f6f6f6;
 }
 .services {
@@ -422,30 +421,26 @@ nav ul li a.active::after{
 .services-detail-left .card {
   width: 30%;
   background: #fff;
-  /* color: #c98474; */
   color: #000;
   text-align: center;
   padding: 30px 25px;
   border-radius: 10px;
-  /* box-shadow: 2px 2px #3963c0; */
-  box-shadow: 2px 2px #2B8BE2;
+  box-shadow: 2px 2px var(--sec-color);
   cursor: pointer;
 }
 .services-detail-left .card:first-child {
-  /* background: #396ec0; */
-  background: #2B8BE2;
+  background: var(--sec-color);
   color: #fff;
-  box-shadow: 2px 2px #000;
+  box-shadow: 2px 2px #696464;
 }
 .services-detail-left .card:hover {
   opacity: 0.6;
 }
 .services-detail-left .card:first-child img {
-  background: #68ACE9;
+  background: #4f8ec6;
 }
 .services-detail-left img {
   margin-bottom: 20px;
-  /* background: #cbcbcb; */
   background: #f0f0f0;
   border-radius: 50%;
   padding: 10px;
@@ -473,178 +468,90 @@ nav ul li a.active::after{
 
 /* services section ends */
 
-/* appointment section starts */
-
-.appointment-background {
-  background: #f6f6f6;
+.dentist-background{
+  background-color: #f6f6f6;
+  position: relative;
 }
-.appointment-section {
+.our-dentist{
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 30px 0;
 }
-.appointment-content {
-  text-align: center;
-  margin-bottom: 30px;
-  width: 60%;
-  }
-
-
-.appointment-content a {
-  text-decoration: none;
-  color: #000;
+.our-dentist-images{
+  width: 25%;
+  height: 350px;
 }
-
-.appointment-table {
-  width: 49%;
-  margin: auto;
-  /* text-align: center; */
-  /* background-color: #f24c4e; */
-  background-color: #fff;
-  border: 1px solid #00d1ff;
-  padding: 20px 70px;
-  border-radius: 20px;
-}
-.appointment-table .appointment-item{
-  margin-bottom: 5px;
-}
-.appointment-table .appointment-item span{
-  font-size: 13px;
-  display: block;
-  height: 20px;
-  color: #f00;
-  text-align: start;
-}
-.appointment-table input {
+.our-dentist-images img{
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  background: #e7e6e6;
-  border: none;
-}
-.choose-date-time{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.choose-date-time div{
-  width: 49%;  
-}
-.appointment-table .submit-cancel input {
-  width: 49%;
-  padding: 10px 50px;
-  margin-top: 10px;
-  font-size: 18px;
-  background-color: #68ACE9;
-  border-radius: 30px;
-  color: #fff;
-  display: inline-block;
-  transition: 0.5s;
-}
-.appointment-table .submit-cancel input:hover {
-  background-color: #2B8BE2;
-}
-
-/* appointment section ends  */
-
-/* our dentist section starts */
-
-.our-dentists-background {
-  background: #f6f6f6;
-}
-.our-dentists {
-  text-align: center;
-  padding: 30px 0;
-}
-.our-dentists img{
-  height: 29rem;
-  /* background-position: center;
-  background-size: cover; */
+  height: 100%;
   object-fit: cover;
 }
-.dentists-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.dentist-background::after{
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(104, 172, 233, 0.6);
 }
-.dentists-detail {
-  width: 32%;
-  background-color: #fff;
-  padding: 0 0 10px;
-}
-.dentists-detail p {
-  color: #a5a5af;
-}
-.dentists-service {
-  color: #2f2f2f !important;
-  margin-bottom: 5px;
-}
-
-.our-dentists .learn-more {
-  background-color: rgb(7, 136, 155);
-  margin-top: 30px;
-}
-.our-dentists .learn-more:before {
-  background-color: rgba(5, 80, 92, 0.6);
-}
-
-/* our dentist section ends */
-
-/* testimonial section starts */
-
-.testimonial-background {
-  background: #f6f6f6;
-}
-.testimonial {
+.our-dentist-content{
+  width: 80%;
   text-align: center;
-  padding: 30px 0;
+  top: calc(50% - 9rem);
+  left: 10%;
+  position: absolute;
+  color: #fff;
+  z-index: 1;
 }
-.testimonial-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 20px;
+.our-dentist-content p{
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  font-family: 'Yeseva One', cursive;
 }
-.testimonial-detail {
-  width: 48%;
-  text-align: left;
+.our-dentist-content a{
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 15px 30px;
+  color: #fff;
 }
-.testimonial-comment {
-  /* background-color: #22c3e624; */
-  background-color: #C6E4FF;
-  padding: 10px;
-  color: #565656;
-  box-shadow: 1px 1px;
-}
-.testimonial-comment h3 {
+.our-dentist-content a:hover{
+  background-color: #fff;
   color: #000;
-  font-size: 18px;
-}
-.testimonial-comment img {
-  margin-right: 10px;
-}
-.testimonial-comment-name {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #2f2f2f;
-  margin-top: 10px;
-}
-.testimonial-comment-name img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 }
 
-/* testimonial section ends */
+.patients-say-background{
+  background-color: #f6f6f6;
+}
+.patients-say{
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem;
+}
+.patients-say .title{
+  font-size: 2.5rem;
+  font-weight: 600;
+  width: 100%;
+}
+.patients-say p{
+  font-size: 1.4rem;
+  margin-bottom: 1.3rem;
+}
+.patients-say .btn{
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: var(--sec-color);
+}
+.patients-say .btn:hover{
+  opacity: 0.8;
+}
+
 
 /* footer menu section starts */
 
 .footer-menu-background {
-  /* background-color: #e6fff6; */
   background-color: #C6E4FF;
 }
 .footer-menu {
@@ -679,12 +586,11 @@ nav ul li a.active::after{
 /* footer section starts */
 
 footer {
-  /* background-color: #26ccc3; */
-  background-color: #7DC0FD;
-  padding: 15px 0;
+  background-color: var(--main-color);
+  padding: 10px 0;
 }
 .copyright {
-  color: #565656;
+  color: #fff;
   text-align: center;
 }
 /* footer section ends */
@@ -967,7 +873,7 @@ footer {
 
 .hovereffect:hover .services-help-description {
   /* background-color: rgba(48, 152, 157, 0.7); */
-  background-color: rgba(104, 172, 233, 0.8);
+  background-color: rgba(104, 172, 233, 0.6);
 }
 
 .hovereffect img {
@@ -1174,300 +1080,6 @@ border-bottom: none;
 }
 /* quaries section ends */
 
-/* login modal section */
-.login-coverpage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.login-page{
-  background-color:#66b9bf;
-  width: 35%;
-  padding: 30px;
-  color: #fff;
-  text-align: center;
-  border-radius: 3px;
-}
-.login-page-header{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-bottom: 1px solid #fff;
-  text-align: center;
-}
-.login-page-title img{
-  width: 50px;
-  height: 50px;
-}
-.login-page-title h3{
-  font-size: 28px;
-}
-.form-control{
-  margin: 10px 0;
-}
-.form-control input{
-  width: 100%;
-  margin-top: 10px;
-  padding: 9px;
-  border: none;
-  border-radius: 6px;
-  outline-color: #00d1ff;
-}
-.form-control input::placeholder{
-  color: #9c9c9c;
-}
-.login-page a{
-  color: rgb(12, 0, 248);
-  font-size: 13px;
-}
-.login-page a:hover{
-  text-decoration: underline;
-}
-.login-page .sign-up{
-  margin-top: 10px;
-  display: block;
-}
-.login-page .sign-up input{
-  width: 100%;
-  padding: 7px 20px;
-  background-color: #008915;
-  color: rgb(230, 230, 230);
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.login-page .sign-up input:hover{
-  background-color: #004485;
-  color: #fff;
-}
-#myLogin{
-  cursor: pointer;
-}
-.loginmodal  {
-  display: none; 
-  position: fixed;
-  z-index: 10000; 
-  left: 0;
-  top: 0;
-  width: 100vw; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(112, 112, 112, 0.9);
-}
-/* Modal Content */
-.loginmodal-content{
-  width: 100vw;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* The Close Button */
-.loginclose{
-  color: #f7f7f7;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.loginclose:hover, .loginclose:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* login modal section ends */
-
-/* dashboard pages starts */
-
-.dashboard{
-  display: flex;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-  background-color: #fff;
-}
-.dashboard .dashboard-logo{
-  width: 20%;
-  padding: 10px;
-  background-color: #00d1ff;
-}
-.dashboard .dashboard-menu{
-  width: 80%;
-  padding: 10px 40px 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dashboard .dashboard-menu .search-bar{
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-.dashboard .dashboard-menu .search-bar input{
-  width: 100%;
-  padding: 8px;
-  border-radius: 30px;
-  outline-color: #00d1ff;
-  border: 1px solid #00d1ff;
-}
-.dashboard .dashboard-menu .search-bar img{
-  position: absolute;
-  right: 10px;
-}
-.dashboard .dashboard-menu .admin, .dashboard .dashboard-menu .profile{
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  cursor: pointer;
-}
-.dashboard .dashboard-menu .admin img{
-  background-color: #00d1ff;
-  border-radius: 50%;
-}
-.dashboard .dashboard-menu .admin::after{
-  content: '\002b9f';
-}
-aside{
-  width: 20%;
-  padding: 10px;
-  position: fixed;
-  top: 74px;
-}
-aside a{
-  color: #00d1ff;
-  text-align: center;
-  margin: 15px ;
-}
-aside .admin{
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-aside .admin img{
-  background-color: #00d1ff;
-  border-radius: 50%;
-}
-aside .aside-menu li a{
-  display: flex;
-  gap: 10px;
-  color: #7b7777;
-  position: relative;
-  margin-top: 20px;
-}
-aside .aside-menu li a::after{
-  content: '\0002c3';
-  position: absolute;
-  right: 0;
-}
-aside .aside-menu li a:hover{
-  color: #000;
-}
-main{
-  background-color: #d7d7d7;
-  position: absolute;
-  top: 74px;
-  left: 20%;
-  width: 80%;
-  padding: 10px 40px 10px 20px;
-}
-main .main-title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-main .main-content{
-  display: flex;
-  justify-content: space-between;
-}
-main .main-content .card{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 20px ;
-  color: #fff;
-  font-size: 13px;
-}
-main .main-content .card img{
-  background-color: rgba(247, 247, 247, 0.3);
-  border-radius: 50%;
-  padding: 10px;
-}
-main .main-content .appointment{
-  background-color: #f24c4e;
-}
-main .main-content .new-patients{
-  background-color: #00d1ff;
-}
-main .main-content .operations{
-  background-color: #396ec0;
-}
-main .main-content .earning{
-  background-color: #1b7b34;
-}
-main .charts{
-  background-color: #fff;
-  margin: 20px 0;
-  padding: 10px;
-  height: 350px;
-}
-main .charts .charts-title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-main .appointment-recent, main .appointment-recent .appointment-request-title, main .appointment-recent .recent-patient .recent-patient-title{
-  display: flex;
-  justify-content: space-between;
-}
-main .appointment-recent .appointment-request, main .appointment-recent .recent-patient{
-  width: 49%;
-  background-color: #fff;
-  padding: 10px;
-}
-main .appointment-recent img{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-main .appointment-recent .appointment-request .appointment-request-detail{
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  gap: 30px;
-  margin-top: 10px;
-}
-main p{
-  font-size: 13px;
-}
-main span{
-  font-size: 12px;
-  color: #676767;
-}
-main .recent-patient .recent-patient-content{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-main .recent-patient .recent-patient-detail{
-  display: grid;
-  align-items: center;
-  margin-top: 10px;
-  grid-template-columns: 2.5fr 1.2fr 1fr 1fr 1fr 1fr;
-}
-main .recent-patient .patient-name{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-/* dashboard pages starts */
-
 @media screen and (max-width:376px){
 
   .services-homepage-images img{
@@ -1480,9 +1092,7 @@ main .recent-patient .patient-name{
   }
 }
 @media screen and (max-width:1023px) {
-  /* .background{
-    width: 69%;
-  } */
+  
   body{
     overflow-x: hidden;
   }
@@ -1499,27 +1109,22 @@ main .recent-patient .patient-name{
   .header-contact p{
       display: none;
   }
-  .user-login{
-      margin-left: 60px;
-  }
-  
   .logo{
       width: 50%;
   }
  
   nav{
     width: 45%;
-      position: absolute;
-      background-color: #fff;
-      height: 100vh;
-      top: 0;
-      right: 0%;
-      box-sizing: border-box;
-      /* transform: translateX(100%); */
-      opacity: 0;
-      transition: 0.3s;
-      visibility: hidden;
-      pointer-events: none;
+    position: absolute;
+    background-color: #fff;
+    height: 100vh;
+    top: 0;
+    right: 0%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+    pointer-events: none;
   }
   
   nav ul{

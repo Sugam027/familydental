@@ -1,5 +1,6 @@
 import React from 'react'
 import CoverSection from './CoverSection'
+import ServiceComponent from './ServiceComponent'
 
 const Services = () => {
   const data = {
@@ -10,6 +11,7 @@ const Services = () => {
   return (
     <>
       <CoverSection {...data} />
+      <ServiceComponent />
     </>
   )
 }

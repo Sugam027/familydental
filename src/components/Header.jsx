@@ -27,7 +27,7 @@ const Header = () => {
             <div className="header-contact">
               {headerContacts.map((contact) => (
                 <div className="contact-item" key={contact.name}>
-                    <img src={`./images/${contact.image}`} alt=""  />
+                    <img src={`./icons/${contact.image}`} alt=""  />
                   <p>{contact.value}</p>
                 </div>
               ))}
